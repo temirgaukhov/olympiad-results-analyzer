@@ -97,18 +97,6 @@ def by_language(df: pd.DataFrame) -> pd.DataFrame:
     )
 
 
-def by_grade(df: pd.DataFrame) -> pd.DataFrame:
-    """Распределение по классам."""
-    return (
-        df.groupby("grade")
-        .agg(
-            participants=("participant_id", "count"),
-            mean_score=("round_1_score", "mean"),
-        )
-        .round(1)
-    )
-
-
 def print_section(title: str, content) -> None:
     """Аккуратный заголовок секции в консоли."""
     bar = "=" * 60
@@ -124,14 +112,12 @@ def main():
     gender_stats = by_gender(df)
     family_stats = by_family_type(df)
     language_stats = by_language(df)
-    grade_stats = by_grade(df)
 
     print_section("ОБЩАЯ СТАТИСТИКА", pd.Series(overall).to_string())
     print_section("ТОП РЕГИОНОВ ПО СРЕДНЕМУ БАЛЛУ", region_stats.head(10))
     print_section("ПО ГЕНДЕРУ", gender_stats)
-    print_section("ПО ТИПУ СЕМЬИ (ключевой инсайт)", family_stats)
+    print_section("ПО ТИПУ СЕМЬИ", family_stats)
     print_section("ПО ЯЗЫКУ ОБУЧЕНИЯ", language_stats)
-    print_section("ПО КЛАССАМ", grade_stats)
 
     # Сохраняем сводный отчёт по регионам
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)

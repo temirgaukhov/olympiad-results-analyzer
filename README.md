@@ -1,6 +1,6 @@
 # Olympiad Results Analyzer
 
-> Synthetic data project that analyzes results of a regional school olympiad — by region, gender, family type, and grade. Built with Python and pandas.
+> Synthetic data project that analyzes results of a regional school olympiad (8th grade) — by region, gender, language, and family type. Built with Python and pandas.
 
 [![Python](https://img.shields.io/badge/Python-3.10+-3776AB?logo=python&logoColor=white)](https://www.python.org/)
 [![Pandas](https://img.shields.io/badge/Pandas-2.0+-150458?logo=pandas&logoColor=white)](https://pandas.pydata.org/)
@@ -10,10 +10,10 @@
 
 ## What this project does
 
-This project simulates and analyzes results of a school olympiad with **5,000 synthetic participants** from across Kazakhstan. It demonstrates a full data pipeline:
+This project simulates and analyzes results of an 8th-grade school olympiad with **5,000 synthetic participants** from across Kazakhstan. It demonstrates a full data pipeline:
 
 1. **Generate** realistic synthetic data (region, gender, language, family type, scores)
-2. **Analyze** results with pandas: group by region, gender, family type, grade
+2. **Analyze** results with pandas: group by region, gender, family type, language
 3. **Visualize** key insights as publication-ready charts
 
 ### Why this project?
@@ -43,14 +43,8 @@ Students from single-parent households score **~5 points lower on average** and 
 ### 1. Top regions by mean score
 ![Top regions](output/charts/01_top_regions.png)
 
-### 2. Social cross-section: family type
-![Family type impact](output/charts/03_family_type.png)
-
-### 3. Score distribution by gender
+### 2. Score distribution by gender
 ![Gender distribution](output/charts/02_gender_distribution.png)
-
-### 4. Mean score by grade level
-![By grade](output/charts/04_by_grade.png)
 
 ---
 

@@ -123,12 +123,6 @@ def generate_participants(n: int = N_PARTICIPANTS) -> pd.DataFrame:
         school_num = random.randint(1, SCHOOLS_PER_DISTRICT)
         school = f"Школа №{school_num}"
 
-        grade = random.choices(
-            [4, 5, 6, 7, 8, 9, 10, 11],
-            weights=[5, 8, 10, 12, 15, 18, 18, 14],
-        )[0]
-        age = grade + 6 + random.choice([-1, 0, 0, 0, 1])  # ~класс + 6
-
         # ~30% — неполные семьи (используем эту переменную в анализе)
         family_type = random.choices(
             ["full", "single"], weights=[0.70, 0.30]
@@ -149,8 +143,6 @@ def generate_participants(n: int = N_PARTICIPANTS) -> pd.DataFrame:
             "first_name": first_name,
             "last_name": last_name,
             "gender": gender,
-            "age": int(age),
-            "grade": grade,
             "region": region,
             "district": district,
             "school": school,
